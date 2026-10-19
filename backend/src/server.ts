@@ -1,5 +1,7 @@
 import { Server } from 'http';
 import app from './app';
+import { seedAdmin } from './app/utils/seedAdmin';
+import { envVars } from './app/config/env';
 
 
 async function startServer() {
@@ -8,8 +10,8 @@ async function startServer() {
 
     try {
         // Start the server
-        server = app.listen(5000, () => {
-            console.log(`🚀 Server is running on http://localhost:5000`);
+        server = app.listen(envVars.PORT, () => {
+            console.log(`🚀 Server is running on http://localhost:${envVars.PORT}`);
         });
 
         // Function to gracefully shut down the server
@@ -44,5 +46,5 @@ async function startServer() {
 
 (async () => {
     await startServer();
-    // TODO: seed admin
+    await seedAdmin();
 })();

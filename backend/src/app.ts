@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from "cookie-parser"
 import helmet from "helmet";
+import { envVars } from './app/config/env';
 
 const app: Application = express();
 
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req: Request, res: Response) => {
     res.send({
         message: "Submission Dashboard Server is running...😃",
-        environment: process.env.NODE_ENV,
+        environment: envVars.NODE_ENV,
         uptime: process.uptime().toFixed(2) + " sec",
         timeStamp: new Date().toISOString()
     })

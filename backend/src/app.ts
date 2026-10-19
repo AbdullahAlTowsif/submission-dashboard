@@ -3,6 +3,8 @@ import cors from 'cors';
 import cookieParser from "cookie-parser"
 import helmet from "helmet";
 import { envVars } from './app/config/env';
+import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import notFound from './app/middlewares/notFound';
 
 const app: Application = express();
 
@@ -29,5 +31,8 @@ app.get('/', (req: Request, res: Response) => {
         timeStamp: new Date().toISOString()
     })
 });
+
+app.use(globalErrorHandler);
+app.use(notFound);
 
 export default app;

@@ -16,7 +16,7 @@ export const seedAdmin = async () => {
 
         console.log("Creating admin...");
 
-        const passwordHash = await bcrypt.hash(
+        const password = await bcrypt.hash(
             envVars.ADMIN_PASSWORD,
             Number(envVars.BCRYPT_SALT_ROUND)
         );
@@ -25,7 +25,7 @@ export const seedAdmin = async () => {
             data: {
                 name: "Admin Mentor",
                 email: envVars.ADMIN_EMAIL,
-                passwordHash,
+                password,
                 role: Role.MENTOR,
             },
             select: { id: true, name: true, email: true, role: true },

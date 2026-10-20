@@ -18,8 +18,16 @@ const validateRequest = (schema: z.ZodType) => async (req: Request, _res: Respon
             const parsed = (await schema.parseAsync(input)) as Record<string, unknown>;
 
             if (parsed.body !== undefined) req.body = parsed.body as Request["body"];
-            if (parsed.query !== undefined) req.query = parsed.query as typeof req.query;
+            // if (parsed.query !== undefined) req.query = parsed.query as typeof req.query;
             if (parsed.params !== undefined) req.params = parsed.params as typeof req.params;
+            if (parsed.query !== undefined) {
+                Object.defineProperty(req, "query", {
+                    value: parsed.query,
+                    writable: true,
+                    configurable: true,
+                    enumerable: true,
+                });
+            }
         } else {
             req.body = await schema.parseAsync(req.body);
         }

@@ -17,3 +17,22 @@ export interface ISubmission {
     reviewedAt: string | null;
     feedbacks?: IFeedback[];
 }
+
+
+export interface IMentorSubmission extends ISubmission {
+    student: { id: string; name: string; email: string };
+}
+
+export interface IStats {
+    total: number;
+    pending: number;
+    approved: number;
+    rejected: number;
+}
+
+export interface IMentorListParams {
+    page: number;
+    limit: number;
+    status?: SubmissionStatus;
+    search?: string;
+}

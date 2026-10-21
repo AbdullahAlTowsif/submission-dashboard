@@ -4,8 +4,10 @@ import { getDefaultDashboardRoute } from "@/lib/auth-utils";
 import { getUserInfo } from "@/services/auth/auth.service";
 import Link from "next/link";
 import { Suspense } from "react";
+import { connection } from "next/server";
 
 async function NavbarActions() {
+    await connection();
     const user = await getUserInfo();
 
     if (user) {

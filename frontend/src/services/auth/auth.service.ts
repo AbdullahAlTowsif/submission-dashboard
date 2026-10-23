@@ -115,7 +115,7 @@ export async function registerUser(
 
     let role: PersonRole;
     try {
-        const response = await serverFetch.post("/auth/signup", {
+        const response = await serverFetch.post("/user/signup", {
             body: JSON.stringify(validated.data),
         });
         const result = await response.json();

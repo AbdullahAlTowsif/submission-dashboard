@@ -48,9 +48,9 @@ Built for the Associate Web Instructor hiring task.
 
 | | URL |
 |---|---|
-| Frontend | `<add after deployment>` |
-| Backend API | `<add after deployment>` |
-| Repository | `<add GitHub repository URL>` |
+| Frontend | `https://submission-dashboard-five.vercel.app/` |
+| Backend API | `https://submission-dashboard-backend.onrender.com/api/v1` |
+| Repository | `https://github.com/AbdullahAlTowsif/submission-dashboard` |
 
 ### Demo credentials
 
@@ -107,7 +107,7 @@ Start the API:
 npm run dev
 ```
 
-The API runs on `http://localhost:4000`. On startup it creates the mentor account if it doesn't exist yet. Check `http://localhost:4000/health` or the startup log.
+The API runs on `http://localhost:5000`. On startup it creates the mentor account if it doesn't exist yet. Check `http://localhost:5000/health` or the startup log.
 
 ### 3. Set up the frontend
 

@@ -391,5 +391,5 @@ Two short Bengali video lessons accompany this project:
 
 | Category | Topic | Link |
 |---|---|---|
-| Theoretical | 1C: Authentication vs. Authorization (RBAC) | `<add link>` |
-| Hands-on coding | 2A: Securing a Route | `<add link>` |
+| Theoretical | 1C: Authentication vs. Authorization (RBAC) | `https://drive.google.com/file/d/1_ksIfFW_eh6PbC_6lIm2e4EmKM8p__Df/view?usp=sharing` |
+| Hands-on coding | 2A: Securing a Route | `https://drive.google.com/file/d/1powujFWvcvTbJJUfTBdiLz36VdnnQFCn/view?usp=sharing` |
